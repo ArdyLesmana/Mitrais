@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mitrais_Test_Core\Mitrais_Test_Core.csproj" />
+    <ProjectReference Include="..\Mitrais_Test_DTO\Mitrais_Test_DTO.csproj" />
+    <ProjectReference Include="..\Mitrais_Test_Repo\Mitrais_Test_Repo.csproj" />
+  </ItemGroup>
+
+</Project>

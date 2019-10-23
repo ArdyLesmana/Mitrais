@@ -1,0 +1,16 @@
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\obj\Debug\netcoreapp2.2\Mitrais_Test_Service.csprojAssemblyReference.cache
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\obj\Debug\netcoreapp2.2\Mitrais_Test_Service.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\obj\Debug\netcoreapp2.2\Mitrais_Test_Service.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\obj\Debug\netcoreapp2.2\Mitrais_Test_Service.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\bin\Debug\netcoreapp2.2\Mitrais_Test_Service.deps.json
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\bin\Debug\netcoreapp2.2\Mitrais_Test_Service.dll
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\bin\Debug\netcoreapp2.2\Mitrais_Test_Service.pdb
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\bin\Debug\netcoreapp2.2\Mitrais_Test_Core.dll
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\bin\Debug\netcoreapp2.2\Mitrais_Test_DTO.dll
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\bin\Debug\netcoreapp2.2\Mitrais_Test_Repo.dll
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\bin\Debug\netcoreapp2.2\Mitrais_Test_Core.pdb
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\bin\Debug\netcoreapp2.2\Mitrais_Test_DTO.pdb
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\bin\Debug\netcoreapp2.2\Mitrais_Test_Repo.pdb
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\obj\Debug\netcoreapp2.2\Mitrais_Test_Service.csproj.CopyComplete
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\obj\Debug\netcoreapp2.2\Mitrais_Test_Service.dll
+C:\Users\ASUS\source\repos\Mitrais_Test_Web\Mitrais_Test_Service\obj\Debug\netcoreapp2.2\Mitrais_Test_Service.pdb

@@ -1,0 +1,212 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/HomePage.cshtml";
+
+
+    String date = DateTime.Now.ToString("yyyy-MM-dd");
+}
+
+<!-- The Modal -->
+<div class="row">
+    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="panel panel-primary" style="width:100%;">
+            <div class="panel-heading">Registration</div>
+            <div class="panel-body">
+                <form class="form-horizontal" id="form">
+
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-2 control-label">Phone Number <font color="red">*</font> : </label>
+                        <div class="col-sm-9 col-md-10">
+                            <input type="text" class="form-control input-sm" name="phone" pattern="^[+][6][2][8][0-9]{9}" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-2 control-label">First Name <font color="red">*</font> : </label>
+                        <div class="col-sm-9 col-md-10">
+                            <input type="text" class="form-control input-sm" name="first_name" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-2 control-label">Last Name <font color="red">*</font> : </label>
+                        <div class="col-sm-9 col-md-10">
+                            <input type="text" class="form-control input-sm" name="last_name" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-2 control-label">Date of Birth  : </label>
+                        <div class="col-sm-9 col-md-10">
+                            <input type="date" class="form-control input-sm datepicker" name="dob" max="@date" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-2 control-label">Gender  : </label>
+                        <div class="col-sm-9 col-md-10">
+                            <input type="radio" class="form-check-inline input-" name="gender" value="Male" checked /> Male
+                            <input type="radio" class="form-check-inline" name="gender" value="Female" /> Female
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-2 control-label">Email <font color="red">*</font>  : </label>
+                        <div class="col-sm-9 col-md-10">
+                            <input type="email" class="form-control input-sm" name="email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-2 control-label"> <font color="red">** Note: Phone Number format (+628) and another 9 digit numbers</font>   </label>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-success pull-right" id="btnSave">Save</button>
+
+                </form>
+
+                <div class="row">
+
+                </div>
+            </div>
+            <div class="panel-footer" id="footer" style="display:none">
+                <div class="col-xl-12">
+                    <a href="@Url.Action("Index","Account")" class="btn btn-primary" style="width:100%;">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="loadMe" tabindex="-1" role="dialog" aria-labelledby="loadMeLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <div class="loader"></div>
+                <div clas="loader-txt">
+                    <p>Please wait ... <br><br><small></small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<link href="toastr.css" rel="stylesheet" />
+<script src="toastr.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://fonts.googleapis.com/css?family=Roboto:300,400"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<style>
+
+    .content {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 150px;
+        margin-left: 150px;
+    }
+
+    .loader {
+        position: relative;
+        text-align: center;
+        margin: 15px auto 35px auto;
+        z-index: 9999;
+        display: block;
+        width: 80px;
+        height: 80px;
+        border: 10px solid rgba(0, 0, 0, .3);
+        border-radius: 50%;
+        border-top-color: #000;
+        animation: spin 1s ease-in-out infinite;
+        -webkit-animation: spin 1s ease-in-out infinite;
+    }
+
+    @@keyframes spin {
+        to {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @@-webkit-keyframes spin {
+        to {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    /** MODAL STYLING **/
+
+    .modal-content {
+        border-radius: 0px;
+        box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-backdrop.show {
+        opacity: 0.75;
+    }
+</style>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#form').submit(function (e) {
+
+            e.preventDefault();            
+            console.log("Save");
+            $("#loadMe").modal({
+                backdrop: "static", //remove ability to close modal with click
+                keyboard: false, //remove option to close with keyboard
+                show: true //Display loader!
+            });
+            console.log("Data: ", $(this).serialize());
+            var form_data = new FormData();
+            form_data.append("phone", $("input[name=phone]").val());
+            form_data.append("first_name", $("input[name=first_name]").val());
+            form_data.append("last_name", $("input[name=last_name]").val());
+            form_data.append("dob", $("input[name=dob]").val());
+            form_data.append("gender", $("input[name=gender]").val());
+            form_data.append("email", $("input[name=email]").val());
+
+             $.ajax({
+                    url: "@Url.Action("AddUser","Account")",
+                    type: "POST",
+                    processData: false,
+                    contentType: false,
+                    data: form_data,
+                    success: function (response) {
+                        console.log("Response: ", response);
+                        if (response.alerts.code == "200") {
+                            $('#footer').show();
+                            $("#loadMe").modal("hide");
+                            Swal.fire({
+                                type: 'Success',
+                                title: 'Success',
+                                text: response.alerts.message
+                            })
+                        }
+                        else {
+                            $("#loadMe").modal("hide");
+                            Swal.fire({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: response.alerts.message
+                            })
+                        }
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.log("Status: " + textStatus + " Error " + errorThrown);
+                        $("#loadMe").modal("hide");
+
+                    }
+                });
+
+
+        });
+            
+        
+    });
+</script>

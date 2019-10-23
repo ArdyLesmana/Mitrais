@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mitrais_Test_Core\Mitrais_Test_Core.csproj" />
+    <ProjectReference Include="..\Mitrais_Test_DTO\Mitrais_Test_DTO.csproj" />
+    <ProjectReference Include="..\Mitrais_Test_Repo\Mitrais_Test_Repo.csproj" />
+    <ProjectReference Include="..\Mitrais_Test_Service\Mitrais_Test_Service.csproj" />
+  </ItemGroup>
+
+</Project>
